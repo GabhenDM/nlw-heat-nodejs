@@ -293,6 +293,11 @@ binary-extensions@^2.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
+bintrees@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/bintrees/-/bintrees-1.0.1.tgz#0e655c9b9c2435eaab68bf4027226d2b55a34524"
+  integrity sha1-DmVcm5wkNeqraL9AJyJtK1WjRSQ=
+
 body-parser@1.19.0:
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.19.0.tgz#96b2709e57c9c4e09a6fd66a8fd979844f69f08a"
@@ -694,6 +699,14 @@ etag@~1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
+
+express-prom-bundle@^6.4.1:
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/express-prom-bundle/-/express-prom-bundle-6.4.1.tgz#a688050b9e090f6969825c33143106d3e0e5a70e"
+  integrity sha512-Sg0svLQe/SS5z1tHDTVfZVjNumobiDlXM0jmemt5Dm9K6BX8z9yCwEr93zbko6fNMR4zKav77iPfxUWi6gAjNA==
+  dependencies:
+    on-finished "^2.3.0"
+    url-value-parser "^2.0.0"
 
 express@^4.17.1:
   version "4.17.1"
@@ -1308,7 +1321,7 @@ object-assign@^4:
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
 
-on-finished@~2.3.0:
+on-finished@^2.3.0, on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
   integrity sha1-IPEzZIGwg811M3mSoWlxqi2QaUc=
@@ -1390,6 +1403,13 @@ process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
+
+prom-client@^14.0.0:
+  version "14.0.0"
+  resolved "https://registry.yarnpkg.com/prom-client/-/prom-client-14.0.0.tgz#7af5a0f8f544743f0dee4447c06ac9bb0d052719"
+  integrity sha512-etPa4SMO4j6qTn2uaSZy7+uahGK0kXUZwO7WhoDpTf3yZ837I3jqUDYmG6N0caxuU6cyqrg0xmOxh+yneczvyA==
+  dependencies:
+    tdigest "^0.1.1"
 
 proxy-addr@~2.0.5:
   version "2.0.7"
@@ -1734,6 +1754,13 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
+tdigest@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/tdigest/-/tdigest-0.1.1.tgz#2e3cb2c39ea449e55d1e6cd91117accca4588021"
+  integrity sha1-Ljyyw56kSeVdHmzZEReszKRYgCE=
+  dependencies:
+    bintrees "1.0.1"
+
 text-hex@1.0.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/text-hex/-/text-hex-1.0.0.tgz#69dc9c1b17446ee79a92bf5b884bb4b9127506f5"
@@ -1897,6 +1924,11 @@ url-parse-lax@^3.0.0:
   integrity sha1-FrXK/Afb42dsGxmZF3gj1lA6yww=
   dependencies:
     prepend-http "^2.0.0"
+
+url-value-parser@^2.0.0:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/url-value-parser/-/url-value-parser-2.0.3.tgz#cd4b8d6754e458d65e8125260c09718d926e6e21"
+  integrity sha512-FjIX+Q9lYmDM9uYIGdMYfQW0uLbWVwN2NrL2ayAI7BTOvEwzH+VoDdNquwB9h4dFAx+u6mb0ONLa3sHD5DvyvA==
 
 util-deprecate@^1.0.1, util-deprecate@~1.0.1:
   version "1.0.2"

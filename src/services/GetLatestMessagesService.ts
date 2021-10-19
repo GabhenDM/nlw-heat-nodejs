@@ -13,7 +13,7 @@ class GetLatestMessagesService {
             }
         })
          // 🔃 update redis with the new user 🔃
-        redisClient.setex(user_id, 1440, JSON.stringify(messages));
+        redisClient.setex(user_id + "_latest", 1440, JSON.stringify(messages));
         return messages;
     }
 }

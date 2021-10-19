@@ -1,3 +1,4 @@
+import { redisClient } from "../app";
 import prismaClient from "../prisma";
 
 class ProfileUserService {
@@ -7,7 +8,7 @@ class ProfileUserService {
                 id: user_id
             }
         })
-
+        redisClient.setex(user_id + "_profile", 1440, JSON.stringify(user));
         return user;
     }
 }

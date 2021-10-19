@@ -3,13 +3,12 @@ services:
   backend:
     build:
       context: .
-      dockerfile: Dockerfile
-      target: base
+      dockerfile: Dockerfile.dev
     volumes:
-      - ./src:/home/node/app/src
-      - ./nodemon.json:/home/node/app/nodemon.json
-      - ./.env:/home/node/app/.env
-      - ./prisma:/home/node/app/prisma
+      - ./src:/usr/src
+      - ./nodemon.json:/usr/nodemon.json
+      - ./.env:/usr/.env
+      - ./prisma:/usr/prisma
     container_name: ts-node-docker
     expose:
       - '4000'
@@ -30,4 +29,3 @@ services:
     command: redis-server --requirepass admin!
     ports:
       - 6379:6379
-

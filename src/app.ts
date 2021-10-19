@@ -3,6 +3,7 @@ import express from "express";
 import http from "http";
 import {Server} from "socket.io";
 import cors from "cors";
+import promBundle from "express-prom-bundle"
 
 
 import {router} from "./routes"
@@ -13,6 +14,21 @@ import { RedisClient } from "redis";
 
 const app = express();
 app.use(cors())
+
+const metricsMiddleware = promBundle({
+    includeMethod: true, 
+    includePath: true, 
+    includeStatusCode: true, 
+    includeUp: true,
+    customLabels: {project_name: 'nlw-heat', project_type: 'test_metrics_labels'},
+    promClient: {
+        collectDefaultMetrics: {
+        }
+      }
+});
+
+app.use(metricsMiddleware)
+
 
 const redisClient = new RedisClient({host: process.env.REDIS_HOST,password: process.env.REDIS_PASSWORD});
 

@@ -6,11 +6,13 @@ const portRedis = process.env.PORT_REDIS || '6379';
 
 const redisClient = new RedisClient({host: process.env.REDIS_HOST,password: process.env.REDIS_PASSWORD});
 
+const key_map = {"/user/profile": "profile", "/messages/latest": "latest"}
+
 const isCached = (req: Request, res: Response, next: NextFunction) => {
     const user_id  = req.user_id;
   
     // getting our data by key (id)
-    redisClient.get(user_id, (err, data) => {
+    redisClient.get(user_id + `_${key_map[req.url.split("?")[0]]}`, (err, data) => {
       if (err) {
         res.status(500).send(err);
       }
